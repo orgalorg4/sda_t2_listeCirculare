@@ -8,10 +8,10 @@ void insertFront(Element *& cap, int val)
 	Element *p = cap;
 	if (cap)
 	{
-		do
+		while (p->leg != cap)
 		{
 			p = p->leg;
-		} while (p->leg != cap->leg);
+		}
 	}
 	p->leg = q;
 	q->leg = cap;
@@ -20,7 +20,7 @@ void insertFront(Element *& cap, int val)
 
 void afisare(Element * cap)
 {
-	if (!cap)
+	if (cap)
 	{
 		Element *p = cap;
 		do
